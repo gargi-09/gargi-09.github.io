@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-zinc-950">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============================================================
+       PAGE METADATA
+       Update the title and description to change how the page
+       appears in browser tabs and search results.
+       ============================================================ -->
+  <title>Gargi Vipat | AI Infrastructure Engineer</title>
+  <meta name="description" content="Building deterministic gates for probabilistic AI. I design the verification layers and evaluation pipelines that allow frontier models to safely touch real enterprise data.">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Inter font (Google Fonts). display=swap shows fallback text immediately while it loads. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (Play CDN). The config below makes Inter the default sans font. -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Visitors who ask their OS for reduced motion get no animations or transitions. */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-indigo-500/30 selection:text-white">
+
+  <!-- Keyboard users can jump past the nav straight to the content. -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-zinc-900">Skip to content</a>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       Sticky, transparent, with backdrop blur.
+       To add a nav link: copy one <li> below and point its href
+       at the id of the section you want it to scroll to.
+       ============================================================ -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-zinc-950/60 backdrop-blur-xl">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Primary">
+      <!-- Logo / name -->
+      <a href="#top" class="text-lg font-semibold tracking-tight text-white transition-colors duration-300 hover:text-indigo-300">
+        Gargi<span class="text-indigo-400">.</span>
+      </a>
+
+      <ul class="flex items-center gap-1 sm:gap-2 text-sm font-medium">
+        <li><a href="#about" class="rounded-full px-3 py-2 text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white">About</a></li>
+        <li><a href="#portfolio" class="rounded-full px-3 py-2 text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white">Portfolio</a></li>
+        <li><a href="#contact" class="rounded-full px-3 py-2 text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HERO SECTION
+         Edit the headline, subheadline and button text here.
+         The blurred colour blobs behind it are purely decorative.
+         ============================================================ -->
+    <section id="top" class="relative overflow-hidden px-4 pt-36 pb-24 sm:px-6 sm:pt-44 sm:pb-32">
+      <!-- Decorative gradient glow (change the colours to restyle the hero) -->
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-3xl"></div>
+        <div class="absolute right-0 top-40 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,#09090b_85%)]"></div>
+      </div>
+
+      <div class="mx-auto max-w-4xl text-center">
+        <!-- Small badge above the headline -->
+        <p class="reveal mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-zinc-300 backdrop-blur">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          Verification &middot; Memory &middot; Evaluation
+        </p>
+
+        <!-- HEADLINE (the <span> holds the gradient-coloured part) -->
+        <h1 class="reveal mt-8 text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Building deterministic gates for
+          <span class="bg-gradient-to-r from-indigo-300 via-violet-300 to-cyan-300 bg-clip-text text-transparent">probabilistic AI.</span>
+        </h1>
+
+        <!-- SUBHEADLINE -->
+        <p class="reveal mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
+          I design the verification layers, memory architectures, and evaluation pipelines that allow frontier models to safely touch real enterprise data without breaking production.
+        </p>
+
+        <!-- CALL TO ACTION BUTTONS -->
+        <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <!-- Primary CTA: GitHub -->
+          <a href="https://github.com/gargi-09" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg shadow-indigo-500/20 transition-all duration-300 ease-out hover:scale-105 hover:shadow-indigo-500/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+            View my work on GitHub
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <!-- Secondary CTA: LinkedIn (ghost style: transparent fill, subtle border, glows on hover) -->
+          <a href="https://www.linkedin.com/in/gargi-vipat/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:border-indigo-400/50 hover:bg-white/5 hover:shadow-lg hover:shadow-indigo-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+            LinkedIn
+            <span aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         Edit the paragraphs below to change your bio.
+         scroll-mt-24 stops the sticky nav from covering the heading
+         when a nav link jumps here.
+         ============================================================ -->
+    <section id="about" class="scroll-mt-24 px-4 py-24 sm:px-6">
+      <div class="mx-auto max-w-6xl">
+        <div class="reveal rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.01] p-8 backdrop-blur-xl sm:p-12 lg:p-16">
+          <!-- Two columns from md screens up: text left, headshot right.
+               To put the photo on the left instead, add md:order-first to the HEADSHOT div. -->
+          <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2 lg:gap-16">
+            <!-- TEXT COLUMN -->
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">About</p>
+              <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Reasoning from failure modes</h2>
+              <div class="mt-6 space-y-5 text-lg leading-relaxed text-zinc-400">
+                <p>
+                  Frontier models are probabilistic. Production infrastructure can't be. My work sits in the gap between the two: the checks, contracts and enforcement points that decide whether a model's output is allowed to touch a real system.
+                </p>
+                <p>
+                  I start from what breaks, how it breaks, and what has to be true for it not to. Then I build the deterministic layer that makes that true, and makes it obvious when it isn't.
+                </p>
+              </div>
+            </div>
+
+            <!-- HEADSHOT COLUMN -->
+            <div class="group relative mx-auto w-full max-w-sm md:max-w-none">
+              <!-- Soft glow behind the photo; brightens on hover -->
+              <div aria-hidden="true" class="absolute -inset-2 rounded-3xl bg-gradient-to-br from-indigo-500/25 via-violet-500/15 to-cyan-500/25 opacity-60 blur-2xl transition-opacity duration-500 group-hover:opacity-100"></div>
+              <div class="relative aspect-square overflow-hidden rounded-2xl border border-zinc-700/50 bg-gradient-to-b from-zinc-800 to-zinc-900 shadow-inner transition-all duration-500 group-hover:border-white/20">
+                <!-- BACKDROP (decorative): sits behind the transparent cutout.
+                     1. Faint grid that fades out toward the edges -->
+                <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]"></div>
+                <!-- 2. Colour glow behind the head and shoulders; brightens on hover -->
+                <div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-[40%] h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/30 blur-3xl transition-opacity duration-500 opacity-80 group-hover:opacity-100"></div>
+                <div aria-hidden="true" class="pointer-events-none absolute right-[15%] top-[20%] h-1/3 w-1/3 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+                <!-- HEADSHOT: swap the file in elements/ or change src to update the photo -->
+                <img src="elements/gargi_photo.png" alt="Portrait of Gargi" class="relative w-full h-full object-contain max-w-sm mx-auto" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PORTFOLIO SECTION
+         Projects are grouped by domain. Each domain has a heading
+         followed by one or more project rows.
+
+         Rows alternate automatically:
+           - Odd rows:  image LEFT,  text RIGHT
+           - Even rows: text LEFT,   image RIGHT
+         The swap is done with the md:order-* classes on the image
+         wrapper. To flip a row, change md:order-first <-> md:order-last.
+
+         TO ADD A PROJECT: copy an entire <article> block (from
+         "PROJECT START" to "PROJECT END") and edit its contents.
+         TO ADD A DOMAIN: copy a whole "DOMAIN START ... DOMAIN END" block.
+         ============================================================ -->
+    <section id="portfolio" class="scroll-mt-24 px-4 py-24 sm:px-6">
+      <div class="mx-auto max-w-6xl">
+
+        <!-- Section heading -->
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-widest text-indigo-400">Portfolio</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-5xl">Selected systems</h2>
+          <p class="mt-4 text-lg text-zinc-400">Production-minded builds where model output meets explicit, verifiable rules.</p>
+        </div>
+
+        <!-- ==================== DOMAIN START: AI Infrastructure ==================== -->
+        <div class="mt-20">
+          <h3 class="reveal flex items-center gap-4 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+            <span>AI Infrastructure</span>
+            <span class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></span>
+          </h3>
+
+          <div class="mt-12 space-y-24 lg:space-y-32">
+
+            <!-- ---------- PROJECT START: Museum QA Agent (Row 1: image left) ---------- -->
+            <article class="reveal grid items-center gap-10 md:grid-cols-2 lg:gap-16">
+              <!-- IMAGE (left) -->
+              <div class="group relative md:order-first">
+                <div aria-hidden="true" class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500/30 to-cyan-500/30 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"></div>
+                <!-- PROJECT THUMBNAIL: full colour, cropped to the top; brightens and zooms slightly on hover.
+                     Clicking opens the full flowchart in a new tab. To swap the image, change both href and src. -->
+                <a href="elements/museum.png" target="_blank" rel="noopener noreferrer"
+                   aria-label="View the Museum QA Agent architecture flowchart (opens in a new tab)"
+                   class="group relative isolate block aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-500 hover:border-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+                  <img src="elements/museum.png" alt="Museum QA Agent architecture flowchart" loading="lazy" decoding="async"
+                       class="w-full h-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100">
+                  <!-- Dark gradient overlay -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+                  <!-- Centered badge: fades in on hover (and on keyboard focus) -->
+                  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-zinc-950/70 px-4 py-2 text-sm font-semibold text-white opacity-0 shadow-lg shadow-black/40 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                      View Architecture <span aria-hidden="true">&nearr;</span>
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- TEXT (right) -->
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-indigo-400">Retrieval &middot; Reasoning</p>
+                <h4 class="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">Museum QA Agent</h4>
+                <p class="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  A hybrid retrieval and reasoning system for querying a messy, real-world museum corpus. It tracks provenance, detects contradictions, and grounds its confidence in retrieval signal rather than the model's own self-report.
+                </p>
+                <!-- Tech tags: add or remove <li> items freely -->
+                <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-zinc-300">
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Hybrid Retrieval</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Provenance</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Contradiction Detection</li>
+                </ul>
+                <!-- CASE STUDY BUTTON: change href to your case study page -->
+                <a href="https://github.com/gargi-09/museum-qa-agent" target="_blank" rel="noopener noreferrer"
+                   class="group/btn mt-8 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-200 transition-all duration-300 ease-out hover:scale-105 hover:border-indigo-400/60 hover:bg-indigo-500/20 hover:text-white hover:shadow-lg hover:shadow-indigo-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400">
+                  View Case Study
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </article>
+            <!-- ---------- PROJECT END: Museum QA Agent ---------- -->
+
+            <!-- ---------- PROJECT START: NextNode (Row 2: image right) ---------- -->
+            <article class="reveal grid items-center gap-10 md:grid-cols-2 lg:gap-16">
+              <!-- IMAGE (right on desktop because of md:order-last; above the text on mobile) -->
+              <div class="group relative md:order-last">
+                <div aria-hidden="true" class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-violet-500/30 to-indigo-500/30 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"></div>
+                <!-- PROJECT THUMBNAIL: see the Museum QA Agent block above for how this works -->
+                <a href="elements/nextnode.png" target="_blank" rel="noopener noreferrer"
+                   aria-label="View the NextNode architecture flowchart (opens in a new tab)"
+                   class="group relative isolate block aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-500 hover:border-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+                  <img src="elements/nextnode.png" alt="NextNode architecture flowchart" loading="lazy" decoding="async"
+                       class="w-full h-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100">
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+                  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-zinc-950/70 px-4 py-2 text-sm font-semibold text-white opacity-0 shadow-lg shadow-black/40 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                      View Architecture <span aria-hidden="true">&nearr;</span>
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- TEXT (left) -->
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-violet-400">Knowledge Graphs &middot; Agents</p>
+                <h4 class="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">NextNode</h4>
+                <p class="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  A neurosymbolic knowledge graph in Neo4j. Multi-hop Cypher traversals and deterministic scoring functions let agents compute implicit relationships over relational schemas instead of guessing at them.
+                </p>
+                <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-zinc-300">
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Neo4j</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Cypher</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Deterministic Scoring</li>
+                </ul>
+                <a href="https://github.com/gargi-09/NextNode" target="_blank" rel="noopener noreferrer"
+                   class="group/btn mt-8 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-200 transition-all duration-300 ease-out hover:scale-105 hover:border-indigo-400/60 hover:bg-indigo-500/20 hover:text-white hover:shadow-lg hover:shadow-indigo-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400">
+                  View Case Study
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </article>
+            <!-- ---------- PROJECT END: NextNode ---------- -->
+
+          </div>
+        </div>
+        <!-- ==================== DOMAIN END: AI Infrastructure ==================== -->
+
+        <!-- ==================== DOMAIN START: Computer Vision ==================== -->
+        <div class="mt-28">
+          <h3 class="reveal flex items-center gap-4 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+            <span>Computer Vision</span>
+            <span class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></span>
+          </h3>
+
+          <div class="mt-12 space-y-24 lg:space-y-32">
+
+            <!-- ---------- PROJECT START: DepthAR (Row 3: image left) ---------- -->
+            <article class="reveal grid items-center gap-10 md:grid-cols-2 lg:gap-16">
+              <!-- IMAGE (left) -->
+              <div class="group relative md:order-first">
+                <div aria-hidden="true" class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500/30 to-emerald-500/30 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"></div>
+                <!-- PROJECT THUMBNAIL: see the Museum QA Agent block above for how this works -->
+                <a href="elements/depthar.png" target="_blank" rel="noopener noreferrer"
+                   aria-label="View the DepthAR architecture flowchart (opens in a new tab)"
+                   class="group relative isolate block aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-500 hover:border-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+                  <img src="elements/depthar.png" alt="DepthAR architecture flowchart" loading="lazy" decoding="async"
+                       class="w-full h-full object-cover object-top opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100">
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+                  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-zinc-950/70 px-4 py-2 text-sm font-semibold text-white opacity-0 shadow-lg shadow-black/40 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                      View Architecture <span aria-hidden="true">&nearr;</span>
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- TEXT (right) -->
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-cyan-400">Real-time Inference &middot; Vision</p>
+                <h4 class="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">DepthAR</h4>
+                <p class="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  A real-time inference pipeline that runs parallel vision models behind a symbolic correction layer. Explicit rule-based boundary overrides catch the model's known failure points and correct them before they reach the user.
+                </p>
+                <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-zinc-300">
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Parallel Vision Models</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Symbolic Correction</li>
+                  <li class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Real-time</li>
+                </ul>
+                <a href="https://github.com/gargi-09/depthar" target="_blank" rel="noopener noreferrer"
+                   class="group/btn mt-8 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-200 transition-all duration-300 ease-out hover:scale-105 hover:border-indigo-400/60 hover:bg-indigo-500/20 hover:text-white hover:shadow-lg hover:shadow-indigo-500/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400">
+                  View Case Study
+                  <span aria-hidden="true" class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </article>
+            <!-- ---------- PROJECT END: DepthAR ---------- -->
+
+            <!-- The next project you add here should use md:order-last on its
+                 image wrapper to keep the alternating pattern going. -->
+
+          </div>
+        </div>
+        <!-- ==================== DOMAIN END: Computer Vision ==================== -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         To change the email address, edit the mailto: href below.
+         To add another button (e.g. LinkedIn), copy the commented
+         template underneath it.
+         ============================================================ -->
+    <section id="contact" class="scroll-mt-24 px-4 py-24 sm:px-6">
+      <div class="mx-auto max-w-4xl">
+        <div class="reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-white/[0.03] to-cyan-500/10 p-10 text-center backdrop-blur-xl sm:p-16">
+          <div aria-hidden="true" class="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-3xl"></div>
+          <p class="relative text-sm font-semibold uppercase tracking-widest text-indigo-400">Contact</p>
+          <h2 class="relative mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's build something reliable</h2>
+          <p class="relative mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+            Shipping models into production and need them to behave? I'd like to hear about it.
+          </p>
+          <div class="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <!-- PRIMARY CONTACT BUTTON -->
+            <a href="mailto:gargivipat@gmail.com"
+               class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-zinc-900 shadow-lg shadow-indigo-500/20 transition-all duration-300 ease-out hover:scale-105 hover:shadow-indigo-500/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">
+              Email Me
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <!-- ADD ANOTHER BUTTON HERE (e.g. LinkedIn):
+            <a href="https://www.linkedin.com/in/gargi-vipat/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur transition-all duration-300 ease-out hover:scale-105 hover:border-white/20 hover:bg-white/10">
+              LinkedIn
+            </a>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 px-4 py-10 sm:px-6">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-zinc-500 sm:flex-row">
+      <p>&copy; <span id="year"></span> Gargi. All rights reserved.</p>
+      <a href="#top" class="transition-colors duration-300 hover:text-white">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ----------------------------------------------------------
+      // SCROLL-TRIGGERED FADE-UP
+      // Any element with class="reveal" starts hidden and slides
+      // up into view the first time it scrolls onto the screen.
+      // To animate a new element, just add "reveal" to its classes.
+      // ----------------------------------------------------------
+      var HIDDEN = ['opacity-0', 'translate-y-8'];
+      var VISIBLE = ['opacity-100', 'translate-y-0'];
+      var MOTION = ['transition-all', 'duration-700', 'ease-out'];
+
+      var elements = document.querySelectorAll('.reveal');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // No animation support or the visitor prefers reduced motion: leave everything visible.
+      if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+      function show(el) {
+        el.classList.remove.apply(el.classList, HIDDEN);
+        el.classList.add.apply(el.classList, VISIBLE);
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          show(entry.target);
+          observer.unobserve(entry.target); // animate once, then stop watching
+        });
+      }, {
+        threshold: 0.15,                 // fire when 15% of the element is visible
+        rootMargin: '0px 0px -40px 0px'  // ...and slightly before it reaches the very bottom
+      });
+
+      // Hide elements in JS (not in the HTML) so the page is still fully
+      // visible if JavaScript fails to load.
+      elements.forEach(function (el) {
+        el.classList.add.apply(el.classList, MOTION.concat(HIDDEN));
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
