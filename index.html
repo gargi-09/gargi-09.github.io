@@ -95,7 +95,9 @@
         <!-- HEADLINE (the <span> holds the gradient-coloured part) -->
         <h1 class="reveal mt-8 text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
           Building deterministic gates for
-          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent font-extrabold filter drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">probabilistic AI.</span>
+          <!-- Glow (filter) and gradient text live on separate elements: putting a filter on the same
+               inline element as bg-clip-text makes Chrome fade out the first and last letters. -->
+          <span class="inline-block filter drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]"><span class="inline-block bg-gradient-to-r from-violet-400 via-fuchsia-500 to-purple-600 bg-clip-text pb-[0.1em] pr-[0.05em] text-transparent font-extrabold">probabilistic AI.</span></span>
         </h1>
 
         <!-- SUBHEADLINE -->
